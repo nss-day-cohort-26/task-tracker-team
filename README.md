@@ -1,5 +1,13 @@
 # The Task Tracker
 
+> **Rule #1:** Your job during this sprint is to learn the following concepts and apply them when solving these issues. Your job is **not** to rush and worry about getting everything done.
+>
+>    1. Understanding the requirements
+>    1. Modular code using Browserify
+>    1. Defining actors with `Object.create()`
+>    1. Defining related data structures
+>    1. Implementing drag & drop
+
 ## User Story
 
 ### **As a task master, in order to keep track of my tasks, I need to record the task name, description, and due date**
@@ -115,9 +123,59 @@
 
 **And** there should be an affordance for exiting the archive view and returning to the tracking view
 
+## User Story
+
+### **As a task master, in order to track related tasks, I should be able to assign a category to any task**
+
+---
+
+**Given** a user has performed a gesture on the _Create Task_ affordance
+
+**When** the task form is rendered
+
+**Then** there should be an affordance for choosing which category the task belongs to
+
+**And** the affordance should be labeled as optional
+
+---
+
+**Given** a user needs to create a new category
+
+**When** the user opens the application
+
+**Then** there should be an affordance for creating a new task category
+
+---
+
+**Given** a user needs to create a new category
+
+**When** the user performs a gesture on the _New Category_ affordance
+
+**Then** an affordance should be displayed to the user with the following elements
+
+1. Prompt
+1. Category name field
+1. Button to save the category
+
+## User Story
+
+### **As a task master, in order to quickly view my efficiency, I should be able to view graphs of my data**
+
+**Given** the user has entered in tasks
+
+**When** the user visits the application
+
+**Then** the user should see an affordance for viewing graphs about the tasks
+
+1. How many tasks currently in each active column and how many are archived
+1. How many tasks in each category (include uncategorized)
+1. How many tasks were completed on time vs. how many were not
+1. Average time it took to complete tasks in each category
+
 ## Helpful Links
 
 1. [Codepen: CSS Grid Responsive Framework](https://codepen.io/justincavery/pen/PjYEjN)
 1. [JavaScript toast notifications](https://github.com/jaredreich/notie)
 1. [Common Responsive Layouts with CSS Grid ](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df)
+1. [A simple yet flexible JavaScript charting library](http://www.chartjs.org/)
 1. [CSS Grid by Example](https://gridbyexample.com/examples/)
