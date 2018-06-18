@@ -1,4 +1,8 @@
 node_modules
+package-lock.json
+dist
+
+.DS_Store
 bower_components
 __pycache__
 *.pyc
