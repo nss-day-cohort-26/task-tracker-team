@@ -1,4 +1,10 @@
+// require from database
+// require from dealer
+const createForm = require("./form.js");
+const clear = require("./clear.js");
+
 const secFrag = document.createDocumentFragment();
+
 
 const loadMain = () => {
     // variables and create elements
@@ -22,8 +28,13 @@ const loadMain = () => {
     secFrag.appendChild(createButn);
 
     const container = document.querySelector("#container");
+    clear(container);
     container.appendChild(secFrag);
 
 };
 
-loadMain();
+module.exports = loadMain();
+
+
+// event lister on button to create form
+const toCreateForm =document.querySelector(".button--create").addEventListener("click", createForm);
