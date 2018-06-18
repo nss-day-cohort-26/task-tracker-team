@@ -1,4 +1,5 @@
-const clear = require("./clear")
+const clear = require("./clear");
+// const loadMain = require("./loadMain");
 
 const formFactory = () => {
   clear();
@@ -15,6 +16,8 @@ const formFactory = () => {
   const dateText = document.createTextNode("Due Date:");
   saveButton.textContent = "Save";
   cancelButton.textContent = "Cancel";
+  cancelButton.setAttribute("id", "cancel");
+  // cancelButton.addEventListener("click", loadMain);
   section.appendChild(nameText);
   section.appendChild(nameInput);
   section.appendChild(descText);
