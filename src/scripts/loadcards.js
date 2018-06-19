@@ -6,7 +6,8 @@ const loadDatabase = () => {
 //    
        storage.taskArray.forEach(key => {
        const section = document.createElement("section");
-       section.setAttribute("id", `${key.taskDateCreated}`)
+       section.setAttribute("id", `${key.taskDateCreated}`);
+       section.className = "card";
        const youEll = document.createElement("ul");
        const ellEyeDesc = document.createElement("li");
        const ellEyeName = document.createElement("li");
