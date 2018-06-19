@@ -10,6 +10,7 @@ const formFactory = () => {
   const descriptionInput = document.createElement("input");
   descriptionInput.setAttribute("id", "taskDescript");
   const dateInput = document.createElement("input");
+  dateInput.setAttribute("type", "date");
   dateInput.setAttribute("id", "taskDue");
   const saveButton = document.createElement("button");
   const cancelButton = document.createElement("button");
