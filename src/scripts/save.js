@@ -12,7 +12,7 @@ const savefunction = () => {
 	const newTask = {
 		taskName: taskName,
 		taskDescription: taskDescript,
-		taskDateCreate: new Date(),
+		taskDateCreated: new Date(),
 		taskDateDue: taskDue,
 		taskStatus: "To do"
 	};
