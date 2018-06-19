@@ -1,13 +1,16 @@
 const clear = require("./clear");
-// const loadMain = require("./loadMain");
+
 
 const formFactory = () => {
   clear();
   const mainDiv = document.querySelector(".hero");
   const section = document.createElement("section");
   const nameInput = document.createElement("input");
+  nameInput.setAttribute("id", "taskName");
   const descriptionInput = document.createElement("input");
+  descriptionInput.setAttribute("id", "taskDescript");
   const dateInput = document.createElement("input");
+  dateInput.setAttribute("id", "taskDue");
   const saveButton = document.createElement("button");
   const cancelButton = document.createElement("button");
   const fragment = document.createDocumentFragment();

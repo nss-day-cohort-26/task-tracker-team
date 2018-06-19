@@ -11,3 +11,5 @@ const databaseMethods = {
             return JSON.parse(databaseString);
         }
 };
+
+module.exports = databaseMethods;
