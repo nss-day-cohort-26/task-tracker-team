@@ -10,5 +10,8 @@ body.addEventListener("click", () => {
     loadForm();
   } else if (event.target.id === "save") {
     save();
+    console.log("Save complete");
+    loadMain();
+    console.log("Load complete");
   }
 });

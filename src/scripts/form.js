@@ -18,6 +18,7 @@ const formFactory = () => {
   const descText = document.createTextNode("Description");
   const dateText = document.createTextNode("Due Date:");
   saveButton.textContent = "Save";
+  saveButton.setAttribute("id", "save");
   cancelButton.textContent = "Cancel";
   cancelButton.setAttribute("id", "cancel");
   // cancelButton.addEventListener("click", loadMain);
