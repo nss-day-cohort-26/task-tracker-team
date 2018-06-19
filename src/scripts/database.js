@@ -25,6 +25,5 @@ const TaskDatabase = Object.create({}, {
 		}
 	}
 });
-
 module.exports = TaskDatabase;
 

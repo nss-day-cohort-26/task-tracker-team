@@ -18,5 +18,7 @@ const loadDatabase = () => {
        section.appendChild(youEll);
        fragment.appendChild(section);
    });
+   return fragment;
 };
+module.exports = loadDatabase;
 

@@ -1,11 +1,13 @@
 // require from database
 // require from dealer
-
+const loadDatabase = require("./loadcards");
 const clear = require("./clear");
+//Getting return value from loadcards
 
 
 
 const loadMain = () => {
+    const cardsFrag = loadDatabase();
     const secFrag = document.createDocumentFragment();
     // variables and create elements
     let heroHead = document.createElement("div");
@@ -33,7 +35,9 @@ const loadMain = () => {
     createButn.setAttribute("id", "create");
     createButn.textContent = "Create New Task";
     console.log("The form is being made");
-
+    //appending cards from local storage to to do column
+    div1Ref.appendChild(cardsFrag);
+    loadDatabase();
     // secFrag.appendChild(h1Ref);
     heroHead.appendChild(h1Ref);
     div0Ref.appendChild(div1Ref);
