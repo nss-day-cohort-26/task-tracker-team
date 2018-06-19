@@ -1,4 +1,12 @@
-const cardDatabase = [];
+const cardDatabase = [
+    {
+        taskName: "Test",
+        taskDescription: "Testing the task object",
+        taskDateCreated: {},
+        taskDateDue: {},
+        taskStatus: "To do"
+    }
+];
 
 
 const databaseMethods = {
