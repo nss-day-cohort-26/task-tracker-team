@@ -1,5 +1,6 @@
 const loadForm = require("./form");
 const loadMain = require("./loadMain");
+const save = require("./save");
 
 const body = document.querySelector("body");
 body.addEventListener("click", () => {
@@ -8,6 +9,6 @@ body.addEventListener("click", () => {
   } else if (event.target.id === "create") {
     loadForm();
   } else if (event.target.id === "save") {
-    
+    save();
   }
 });
