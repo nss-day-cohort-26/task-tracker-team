@@ -1,13 +1,17 @@
 const clear = require("./clear");
-// const loadMain = require("./loadMain");
+
 
 const formFactory = () => {
   clear();
   const mainDiv = document.querySelector(".hero");
   const section = document.createElement("section");
   const nameInput = document.createElement("input");
+  nameInput.setAttribute("id", "taskName");
   const descriptionInput = document.createElement("input");
+  descriptionInput.setAttribute("id", "taskDescript");
   const dateInput = document.createElement("input");
+  dateInput.setAttribute("type", "date");
+  dateInput.setAttribute("id", "taskDue");
   const saveButton = document.createElement("button");
   const cancelButton = document.createElement("button");
   const fragment = document.createDocumentFragment();
@@ -15,6 +19,7 @@ const formFactory = () => {
   const descText = document.createTextNode("Description");
   const dateText = document.createTextNode("Due Date:");
   saveButton.textContent = "Save";
+  saveButton.setAttribute("id", "save");
   cancelButton.textContent = "Cancel";
   cancelButton.setAttribute("id", "cancel");
   // cancelButton.addEventListener("click", loadMain);
