@@ -1,5 +1,5 @@
 const clear = require("./clear");
-// const loadMain = require("./loadMain");
+
 
 const formFactory = () => {
   clear();
@@ -24,9 +24,16 @@ const formFactory = () => {
   const descText = document.createTextNode("Description");
   const dateText = document.createTextNode("Due Date:");
   saveButton.textContent = "Save";
+  saveButton.setAttribute("id", "save");
   cancelButton.textContent = "Cancel";
   cancelButton.setAttribute("id", "cancel");
   // cancelButton.addEventListener("click", loadMain);
+  nameInput.setAttribute("id", "taskName");
+  descriptionInput.setAttribute("id", "taskDescript");
+  dateInput.setAttribute("type", "date");
+  dateInput.setAttribute("id", "taskDue");
+  
+  //styling for forms start
   pName.setAttribute("class","control has-icons-left");
   nameInput.setAttribute("class","input is-primary is-large");
   nameSpan.setAttribute("class","icon is-small is-left");
@@ -46,6 +53,7 @@ const formFactory = () => {
 
   saveButton.setAttribute("class","hero button is-primary");
   cancelButton.setAttribute("class","hero button is-light");
+  //styling for forms end
 
   section.appendChild(nameText);
   pName.appendChild(nameInput);
