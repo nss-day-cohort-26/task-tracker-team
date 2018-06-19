@@ -3,7 +3,7 @@ const clear = require("./clear");
 
 const formFactory = () => {
   clear();
-  const mainDiv = document.querySelector("#container");
+  const mainDiv = document.querySelector(".hero");
   const section = document.createElement("section");
   const nameInput = document.createElement("input");
   const descriptionInput = document.createElement("input");
