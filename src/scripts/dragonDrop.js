@@ -18,9 +18,11 @@ const dragonFunction = () => {
     });
     item.addEventListener("drop", function(){
       event.preventDefault();
-      const cardId = event.dataTransfer.getData("text");
-      const currentDragon = document.querySelector(`#${cardId}`);
-      event.target.appendChild(currentDragon);
+        if(event.target.classList.contains("column")) {
+          const cardId = event.dataTransfer.getData("text");
+          const currentDragon = document.querySelector(`#${cardId}`);
+          event.target.appendChild(currentDragon);
+        }
     });
   });
 };
