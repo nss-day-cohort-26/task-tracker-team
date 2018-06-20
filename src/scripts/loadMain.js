@@ -19,13 +19,13 @@ const loadMain = () => {
     let div1Ref = document.createElement("div");
     let div2Ref = document.createElement("div");
     let div3Ref = document.createElement("div");
-    let heroFoot = document.createElement("div");
+    // let heroFoot = document.createElement("div");
     let createButn = document.createElement("button");
     // set attributes
     body.setAttribute("class", "has-background-light");
-    heroHead.setAttribute("class","hero-head");
+    heroHead.setAttribute("class","hero-head has-text-centered");
     h1Ref.setAttribute("class","title is-1 has-text-centered");
-    h1Ref.textContent = "Task Tracker ;-)";
+    h1Ref.textContent = "Task Tracker ";
     heroBody.setAttribute("class","hero-body is-light");
     div0Ref.setAttribute("class","columns has-text-centered");
     div1Ref.setAttribute("class", "column column--todo has-background-info");
@@ -34,24 +34,25 @@ const loadMain = () => {
     div2Ref.textContent = "Doing";
     div3Ref.setAttribute("class", "column column--done has-background-primary");
     div3Ref.textContent = "Done";
-    heroFoot.setAttribute("class","hero-foot has-text-centered");
-    createButn.setAttribute("class", "button button--create");
+    // heroFoot.setAttribute("class","hero-foot has-text-centered");
+    createButn.setAttribute("class", "button button--create is-large");
     createButn.setAttribute("id", "create");
-    createButn.textContent = "Create New Task";
+    createButn.textContent = "😉";
     console.log("The form is being made");
     //appending cards from local storage to to do column
     div1Ref.appendChild(cardsFrag);
     loadDatabase();
     // secFrag.appendChild(h1Ref);
     heroHead.appendChild(h1Ref);
+    h1Ref.appendChild(createButn);
     div0Ref.appendChild(div1Ref);
     div0Ref.appendChild(div2Ref);
     div0Ref.appendChild(div3Ref);
     heroBody.appendChild(div0Ref);
-    heroFoot.appendChild(createButn);
+    // heroFoot.appendChild(createButn);
     secFrag.appendChild(heroHead);
     secFrag.appendChild(heroBody);
-    secFrag.appendChild(heroFoot);
+    // secFrag.appendChild(heroFoot);
     // secFrag.appendChild(div1Ref);
     // secFrag.appendChild(div2Ref);
     // secFrag.appendChild(div3Ref);
