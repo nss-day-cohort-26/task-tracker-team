@@ -7,3 +7,6 @@ body{height: 100%;}
 .columns{height: 100%;}
 
 .column{margin: 0 2rem;}
+.card {
+  border: 1px solid black;
+}

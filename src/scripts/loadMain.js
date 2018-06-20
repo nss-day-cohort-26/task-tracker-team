@@ -2,6 +2,7 @@
 // require from dealer
 const loadDatabase = require("./loadcards");
 const clear = require("./clear");
+const dragonFunction = require("./dragonDrop");
 //Getting return value from loadcards
 
 
@@ -61,7 +62,7 @@ const loadMain = () => {
     console.log("The container is cleared");
     container.appendChild(secFrag);
     console.log("Child appended");
-
+    dragonFunction();
 };
 
 module.exports = loadMain;
