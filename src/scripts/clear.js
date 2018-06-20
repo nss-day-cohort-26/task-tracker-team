@@ -1,5 +1,5 @@
 const clear = () => {
-    const container = document.querySelector(".hero");
+    const container = document.querySelector("#container");
     while (container.firstElementChild){
         container.removeChild(container.firstElementChild);
     };

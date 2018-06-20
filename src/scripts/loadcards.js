@@ -16,6 +16,7 @@ const loadDatabase = () => {
         ellEyeName.textContent = `Name: ${key.taskName}`;
         ellEyeDesc.textContent = `Description: ${key.taskDescription}`;
         ellEyeDate.textContent = `Date Due: ${key.taskDateDue}`;
+        section.setAttribute("class","card");
         youEll.appendChild(ellEyeName);
         youEll.appendChild(ellEyeDesc);
         youEll.appendChild(ellEyeDate);
