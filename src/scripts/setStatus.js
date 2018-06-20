@@ -16,21 +16,12 @@ const setStatus = () => {
     switch (true) {
       case parentClass.contains("column--todo"):
         database.taskArray[targetObject].taskStatus = "todo";
-        console.log("To do column");
-        Database.save(database, "TaskDatabase");
-
         break;
       case parentClass.contains("column--doing"):
         database.taskArray[targetObject].taskStatus = "doing";
-        console.log("Doing column");
-        Database.save(database, "TaskDatabase");
-
         break;
       case parentClass.contains("column--done"):
         database.taskArray[targetObject].taskStatus = "done";
-        console.log("Done column");
-        Database.save(database, "TaskDatabase");
-
         break;
       default:
         break;
