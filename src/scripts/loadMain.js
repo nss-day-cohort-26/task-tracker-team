@@ -3,6 +3,7 @@
 const loadDatabase = require("./loadcards");
 const clear = require("./clear");
 const dragonFunction = require("./dragonDrop");
+const database = require("./database");
 //Getting return value from loadcards
 
 
@@ -39,9 +40,19 @@ const loadMain = () => {
     createButn.setAttribute("id", "create");
     createButn.textContent = "Create New Task";
     console.log("The form is being made");
-    //appending cards from local storage to to do column
-    div1Ref.appendChild(cardsFrag);
-    loadDatabase();
+    //appending cards from local storage to its column based on status
+    database.taskArray.forEach(item => {
+    if(item.taskStatus === "todo"){
+        div1Ref.appendChild(cardsFrag);
+        loadDatabase();
+    }else if(item.taskStatus === "doing"){
+        div2Ref.appendChild(cardsFrag);
+        loadDatabase();
+    }else if(item.taskStatus === "done"){
+        div3Ref.appendChild(cardsFrag);
+        loadDatabase();
+    }
+    });
     // secFrag.appendChild(h1Ref);
     heroHead.appendChild(h1Ref);
     div0Ref.appendChild(div1Ref);
