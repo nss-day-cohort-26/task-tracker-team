@@ -1,14 +1,13 @@
 const database = require("./database");
 
 const loadDatabase = () => {
-    const fragment = document.createDocumentFragment();
+    const cardDeck = [];
     const storage = database.load("TaskDatabase");
     let idCounter = 0;
     storage.taskArray.forEach(key => {
     const section = document.createElement("section");
         section.setAttribute("id", `task-${idCounter}`);
         idCounter++;
-        section.className = "card";
         const youEll = document.createElement("ul");
         const ellEyeDesc = document.createElement("li");
         const ellEyeName = document.createElement("li");
@@ -21,9 +20,9 @@ const loadDatabase = () => {
         youEll.appendChild(ellEyeDesc);
         youEll.appendChild(ellEyeDate);
         section.appendChild(youEll);
-        fragment.appendChild(section);
+        cardDeck.push(section);
     });
-    return fragment;
+    return cardDeck;
 };
 module.exports = loadDatabase;
 

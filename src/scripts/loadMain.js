@@ -1,15 +1,16 @@
 // require from database
 // require from dealer
-const loadDatabase = require("./loadcards");
+const loadCards = require("./loadcards");
 const clear = require("./clear");
 const dragonFunction = require("./dragonDrop");
-const database = require("./database");
+const Database = require("./database");
+const setStatus = require("./setStatus");
 //Getting return value from loadcards
 
 
 
 const loadMain = () => {
-    const cardsFrag = loadDatabase();
+    const cardDeck = loadCards();
     const secFrag = document.createDocumentFragment();
     // variables and create elements
     let body = document.querySelector("body");
@@ -17,55 +18,57 @@ const loadMain = () => {
     let h1Ref = document.createElement("h1");
     let heroBody = document.createElement("div");
     let div0Ref = document.createElement("div");
-    let div1Ref = document.createElement("div");
-    let div2Ref = document.createElement("div");
-    let div3Ref = document.createElement("div");
+    let todoColumn = document.createElement("div");
+    let doingColumn = document.createElement("div");
+    let doneColumn = document.createElement("div");
     let heroFoot = document.createElement("div");
     let createButn = document.createElement("button");
     // set attributes
     body.setAttribute("class", "has-background-light");
-    heroHead.setAttribute("class","hero-head");
-    h1Ref.setAttribute("class","title is-1 has-text-centered");
+    heroHead.setAttribute("class", "hero-head");
+    h1Ref.setAttribute("class", "title is-1 has-text-centered");
     h1Ref.textContent = "Task Tracker ;-)";
-    heroBody.setAttribute("class","hero-body is-light");
-    div0Ref.setAttribute("class","columns has-text-centered");
-    div1Ref.setAttribute("class", "column column--todo has-background-info");
-    div1Ref.textContent = "To-Do";
-    div2Ref.setAttribute("class", "column column--doing has-background-link");
-    div2Ref.textContent = "Doing";
-    div3Ref.setAttribute("class", "column column--done has-background-primary");
-    div3Ref.textContent = "Done";
-    heroFoot.setAttribute("class","hero-foot has-text-centered");
+    heroBody.setAttribute("class", "hero-body is-light");
+    div0Ref.setAttribute("class", "columns has-text-centered");
+    todoColumn.setAttribute("class", "column column--todo has-background-info");
+    todoColumn.textContent = "To-Do";
+    doingColumn.setAttribute("class", "column column--doing has-background-link");
+    doingColumn.textContent = "Doing";
+    doneColumn.setAttribute("class", "column column--done has-background-primary");
+    doneColumn.textContent = "Done";
+    heroFoot.setAttribute("class", "hero-foot has-text-centered");
     createButn.setAttribute("class", "button button--create");
     createButn.setAttribute("id", "create");
     createButn.textContent = "Create New Task";
     console.log("The form is being made");
     //appending cards from local storage to its column based on status
-    database.taskArray.forEach(item => {
-    if(item.taskStatus === "todo"){
-        div1Ref.appendChild(cardsFrag);
-        loadDatabase();
-    }else if(item.taskStatus === "doing"){
-        div2Ref.appendChild(cardsFrag);
-        loadDatabase();
-    }else if(item.taskStatus === "done"){
-        div3Ref.appendChild(cardsFrag);
-        loadDatabase();
-    }
+    setStatus();
+    const database = Database.load("TaskDatabase");
+    database.taskArray.forEach((item, index) => {
+        if (item.taskStatus === "todo") {
+            console.log("To Do",item.taskStatus)
+            todoColumn.appendChild(cardDeck[index]);
+        } else if (item.taskStatus === "doing") {
+            console.log("Doing", item.taskStatus)
+            doingColumn.appendChild(cardDeck[index]);
+        } else if (item.taskStatus === "done") {
+            console.log("Done", item.taskStatus)
+            doneColumn.appendChild(cardDeck[index]);
+        }
     });
     // secFrag.appendChild(h1Ref);
     heroHead.appendChild(h1Ref);
-    div0Ref.appendChild(div1Ref);
-    div0Ref.appendChild(div2Ref);
-    div0Ref.appendChild(div3Ref);
+    div0Ref.appendChild(todoColumn);
+    div0Ref.appendChild(doingColumn);
+    div0Ref.appendChild(doneColumn);
     heroBody.appendChild(div0Ref);
     heroFoot.appendChild(createButn);
     secFrag.appendChild(heroHead);
     secFrag.appendChild(heroBody);
     secFrag.appendChild(heroFoot);
-    // secFrag.appendChild(div1Ref);
-    // secFrag.appendChild(div2Ref);
-    // secFrag.appendChild(div3Ref);
+    // secFrag.appendChild(todoColumn);
+    // secFrag.appendChild(doingColumn);
+    // secFrag.appendChild(doneColumn);
     // secFrag.appendChild(createButn);
     console.log("Things are appended to the fragment");
     const container = document.querySelector("#container");
