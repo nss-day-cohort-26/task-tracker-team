@@ -1,5 +1,7 @@
 // add dragable ability
 
+const setStatus = require("./setStatus")
+
 const dragonFunction = () => {
   const tasks = document.querySelectorAll(".card");
 
@@ -23,6 +25,7 @@ const dragonFunction = () => {
           const currentDragon = document.querySelector(`#${cardId}`);
           event.target.appendChild(currentDragon);
         }
+        setStatus();
     });
   });
 };
