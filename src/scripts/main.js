@@ -1,12 +1,15 @@
 const database = require("./database");
+const loadMain = require("./loadMain");
+const setStatus = require("./setStatus");
 // const dragons = require("./dragonDrop");
 
 // const loadForm = require("./form");
-if (localStorage.getItem("TaskDatabase") === null) {
+if (database.load("TaskDatabase") === null) {
   console.log(database);
   database.save(database, "TaskDatabase");
 }
-const loadMain = require("./loadMain");
+
 loadMain();
+setStatus();
 // loadForm();
 // dragons();

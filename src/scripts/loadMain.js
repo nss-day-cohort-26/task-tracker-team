@@ -4,13 +4,14 @@ const loadCards = require("./loadcards");
 const clear = require("./clear");
 const dragonFunction = require("./dragonDrop");
 const Database = require("./database");
-const setStatus = require("./setStatus");
+// const setStatus = require("./setStatus");
 //Getting return value from loadcards
 
 
 
 const loadMain = () => {
     const cardDeck = loadCards();
+
     const secFrag = document.createDocumentFragment();
     // variables and create elements
     let body = document.querySelector("body");
@@ -42,7 +43,8 @@ const loadMain = () => {
     createButn.textContent = "Create New Task";
     console.log("The form is being made");
     //appending cards from local storage to its column based on status
-    setStatus();
+    // setStatus();
+
     const database = Database.load("TaskDatabase");
     database.taskArray.forEach((item, index) => {
         if (item.taskStatus === "todo") {
@@ -77,6 +79,7 @@ const loadMain = () => {
     container.appendChild(secFrag);
     console.log("Child appended");
     dragonFunction();
+
 };
 
 module.exports = loadMain;
