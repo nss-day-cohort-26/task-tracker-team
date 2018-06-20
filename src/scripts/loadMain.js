@@ -10,6 +10,7 @@ const loadMain = () => {
     const cardsFrag = loadDatabase();
     const secFrag = document.createDocumentFragment();
     // variables and create elements
+    let body = document.querySelector("body");
     let heroHead = document.createElement("div");
     let h1Ref = document.createElement("h1");
     let heroBody = document.createElement("div");
@@ -20,17 +21,19 @@ const loadMain = () => {
     let heroFoot = document.createElement("div");
     let createButn = document.createElement("button");
     // set attributes
+    body.setAttribute("class", "has-background-light");
     heroHead.setAttribute("class","hero-head");
+    h1Ref.setAttribute("class","title is-1 has-text-centered");
     h1Ref.textContent = "Task Tracker ;-)";
     heroBody.setAttribute("class","hero-body is-light");
     div0Ref.setAttribute("class","columns has-text-centered");
-    div1Ref.setAttribute("class", "column column--todo");
+    div1Ref.setAttribute("class", "column column--todo has-background-info");
     div1Ref.textContent = "To-Do";
-    div2Ref.setAttribute("class", "column column--doing");
+    div2Ref.setAttribute("class", "column column--doing has-background-link");
     div2Ref.textContent = "Doing";
-    div3Ref.setAttribute("class", "column column--done");
+    div3Ref.setAttribute("class", "column column--done has-background-primary");
     div3Ref.textContent = "Done";
-    heroFoot.setAttribute("class","hero-foot");
+    heroFoot.setAttribute("class","hero-foot has-text-centered");
     createButn.setAttribute("class", "button button--create");
     createButn.setAttribute("id", "create");
     createButn.textContent = "Create New Task";
@@ -53,7 +56,7 @@ const loadMain = () => {
     // secFrag.appendChild(div3Ref);
     // secFrag.appendChild(createButn);
     console.log("Things are appended to the fragment");
-    const container = document.querySelector(".hero");
+    const container = document.querySelector("#container");
     clear();
     console.log("The container is cleared");
     container.appendChild(secFrag);

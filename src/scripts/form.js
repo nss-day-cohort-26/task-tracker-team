@@ -3,8 +3,9 @@ const clear = require("./clear");
 
 const formFactory = () => {
   clear();
-  const mainDiv = document.querySelector(".hero");
+  const mainDiv = document.querySelector("#container");
   const section = document.createElement("section");
+  const fieldDiv = document.createElement("div");
   const pName = document.createElement("p");
   const nameInput = document.createElement("input");
   const nameSpan = document.createElement("span");
@@ -17,12 +18,10 @@ const formFactory = () => {
   const dateInput = document.createElement("input");
   const dateSpan = document.createElement("span");
   const dateIcon = document.createElement("i");
+  const buttonDiv = document.createElement("div");
   const saveButton = document.createElement("button");
   const cancelButton = document.createElement("button");
   const fragment = document.createDocumentFragment();
-  const nameText = document.createTextNode("Name:");
-  const descText = document.createTextNode("Description");
-  const dateText = document.createTextNode("Due Date:");
   saveButton.textContent = "Save";
   saveButton.setAttribute("id", "save");
   cancelButton.textContent = "Cancel";
@@ -34,44 +33,48 @@ const formFactory = () => {
   dateInput.setAttribute("id", "taskDue");
   
   //styling for forms start
-  pName.setAttribute("class","control has-icons-left");
+  fieldDiv.setAttribute("class","field");
+  pName.setAttribute("class","field control has-icons-left");
+  pName.setAttribute("id","pName");
   nameInput.setAttribute("class","input is-primary is-large");
+  nameInput.setAttribute("placeholder","Name");
   nameSpan.setAttribute("class","icon is-small is-left");
   nameIcon.setAttribute("class","fas fa-user-ninja");
 
-  pDescription.setAttribute("class","control has-icons-left");
+  pDescription.setAttribute("class","field control has-icons-left");
   descriptionInput.setAttribute("class","input is-info is-large");
+  descriptionInput.setAttribute("placeholder","Description");
   descSpan.setAttribute("class","icon is-small is-left");
   descIcon.setAttribute("class","fas fa-align-left");
 
-  pDate.setAttribute("class","control has-icons-left");
+  pDate.setAttribute("class","field control has-icons-left");
   dateInput.setAttribute("class","input is-warning is-large");
   dateSpan.setAttribute("class","icon is-small is-left");
   dateIcon.setAttribute("class","fas fa-calendar-alt");
 
-  section.setAttribute("class","hero is-light");
+  section.setAttribute("class","hero-body is-light");
 
-  saveButton.setAttribute("class","hero button is-primary");
-  cancelButton.setAttribute("class","hero button is-light");
+  buttonDiv.setAttribute("class","level");
+  saveButton.setAttribute("class","hero-foot level-left is-medium button is-primary");
+  cancelButton.setAttribute("class","hero-foot level-right is-medium button is-light");
   //styling for forms end
 
-  section.appendChild(nameText);
   pName.appendChild(nameInput);
   pName.appendChild(nameSpan);
   nameSpan.appendChild(nameIcon);
-  section.appendChild(pName);
-  section.appendChild(descText);
+  fieldDiv.appendChild(pName);
   pDescription.appendChild(descriptionInput);
   pDescription.appendChild(descSpan);
   descSpan.appendChild(descIcon);
-  section.appendChild(pDescription);
-  section.appendChild(dateText);
+  fieldDiv.appendChild(pDescription);
   pDate.appendChild(dateInput);
   pDate.appendChild(dateSpan);
   dateSpan.appendChild(dateIcon);
-  section.appendChild(pDate);
-  section.appendChild(saveButton);
-  section.appendChild(cancelButton);
+  fieldDiv.appendChild(pDate);
+  section.appendChild(fieldDiv);
+  buttonDiv.appendChild(saveButton);
+  buttonDiv.appendChild(cancelButton);
+  section.appendChild(buttonDiv);
   fragment.appendChild(section);
   mainDiv.appendChild(fragment);
   console.log("Testing This Function"); 
