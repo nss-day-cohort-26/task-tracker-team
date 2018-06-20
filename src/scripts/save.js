@@ -14,7 +14,7 @@ const savefunction = () => {
 		taskDescription: taskDescript,
 		taskDateCreated: new Date(),
 		taskDateDue: taskDue,
-		taskStatus: "To Do"
+		taskStatus: "todo"
 	};
 	database.taskArray.push(newTask);
 	Database.save(database, "TaskDatabase");

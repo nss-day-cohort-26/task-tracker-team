@@ -5,7 +5,7 @@ const TaskDatabase = Object.create({}, {
 				taskName: "Test",
 				taskDescription: "Testing the task object",
 				taskDateCreated: 123,
-				taskDateDue: {},
+				taskDateDue: "Later",
 				taskStatus: "todo" // also possible: "doing", "done"
 			}
 		],
