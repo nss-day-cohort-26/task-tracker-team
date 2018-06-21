@@ -2,11 +2,11 @@ const TaskDatabase = Object.create({}, {
 	taskArray: {
 		value: [
 			{
-				taskName: "Test",
-				taskDescription: "Testing the task object",
+				taskName: "TOTALLY AWESOME DEMO!",
+				taskDescription: "Present the product! Bask in the applause! High-fives all around!",
 				taskDateCreated: 123,
-				taskDateDue: {},
-				taskStatus: "To do"
+				taskDateDue: "Today, 10:55",
+				taskStatus: "todo" // also possible: "doing", "done"
 			}
 		],
 		enumerable: true,
