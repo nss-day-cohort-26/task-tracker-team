@@ -28,9 +28,9 @@ const loadMain = () => {
     body.setAttribute("class", "has-background-light");
     heroHead.setAttribute("class", "hero-head");
     h1Ref.setAttribute("class", "title is-1 has-text-centered");
-    h1Ref.textContent = "Task Tracker -- Click winky face to add tasks ";
+    h1Ref.textContent = "Task Tracker : Click Winky Face to add tasks! ";
     heroBody.setAttribute("class", "hero-body is-light");
-    div0Ref.setAttribute("class", "columns has-text-centered");
+    div0Ref.setAttribute("class", "columns");
     todoColumn.setAttribute("class", "column column--todo has-background-info");
     todoColumn.textContent = "To-Do";
     doingColumn.setAttribute("class", "column column--doing has-background-link");

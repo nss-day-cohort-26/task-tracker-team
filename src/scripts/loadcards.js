@@ -12,9 +12,9 @@ const loadDatabase = () => {
         const ellEyeDesc = document.createElement("li");
         const ellEyeName = document.createElement("li");
         const ellEyeDate = document.createElement("li");
-        ellEyeName.textContent = `Name: ${key.taskName}`;
-        ellEyeDesc.textContent = `Description: ${key.taskDescription}`;
-        ellEyeDate.textContent = `Date Due: ${key.taskDateDue}`;
+        ellEyeName.textContent = `> NAME: ${key.taskName}`;
+        ellEyeDesc.textContent = `> DESCRIPTION: ${key.taskDescription}`;
+        ellEyeDate.textContent = `> DATE DUE: ${key.taskDateDue}`;
         section.setAttribute("class",`card ${key.taskStatus}`);
         youEll.appendChild(ellEyeName);
         youEll.appendChild(ellEyeDesc);

@@ -2,7 +2,7 @@ const TaskDatabase = Object.create({}, {
 	taskArray: {
 		value: [
 			{
-				taskName: "TOTALLY AWESOME DEMO!",
+				taskName: "Totally Awesome Demo!",
 				taskDescription: "Present the product! Bask in the applause! High-fives all around!",
 				taskDateCreated: 123,
 				taskDateDue: "Today, 10:55",
